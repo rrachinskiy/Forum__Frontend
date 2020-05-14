@@ -1,0 +1,11 @@
+.wrap {
+    width: 85vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+    .wrap {
+        width: 100vw;
+    }
+}
