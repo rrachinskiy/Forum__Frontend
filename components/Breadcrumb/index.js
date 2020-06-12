@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default (props) => {
-    return (
-        <>
-            <style jsx>{`
+  return (
+    <>
+      <style jsx>{`
             .breadcrumb__block {
                 margin-top: 11px;
                 border: 1px solid #ececec;
@@ -59,13 +61,21 @@ export default (props) => {
                 padding-left: 0;
             }
             `}</style>
-            <div className="breadcrumb__block">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="/"><span>Головна</span></a></li>
-                    <li className="breadcrumb-item"><a href="/"><span>Розділ</span></a></li>
-                    <li className="breadcrumb-item active"><span>Тема</span></li>
-                </ol>
-            </div>
-        </>
-    )
+      <div className="breadcrumb__block">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link href="/">
+              <a><span>Головна</span></a>
+            </Link>
+          </li>
+          <li className="breadcrumb-item">
+            <a href="/"><span>Розділ</span></a>
+          </li>
+          <li className="breadcrumb-item active">
+            <span>Тема</span>
+          </li>
+        </ol>
+      </div>
+    </>
+  )
 }

@@ -1,7 +1,7 @@
 export default (props) => {
-    return (
-        <>
-            <style jsx>{`
+  return (
+    <>
+      <style jsx>{`
                 .sections {
                     background: #E3E8EA;
                     border: 1px solid #ececec;
@@ -33,12 +33,12 @@ export default (props) => {
                     border: 1px solid #CED2D3;
                 }
             `}</style>
-            <div className="sections">
-                <h2>Розділи</h2>
-                <div className="sections-content">
-                    {props.children}
-                </div>
-            </div>
-        </>
-    )
+      <div className="sections">
+        <h2>{props.boxTitle}</h2>
+        <div className="sections-content">
+          {props.children}
+        </div>
+      </div>
+    </>
+  )
 }

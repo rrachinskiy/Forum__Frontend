@@ -1,7 +1,7 @@
 export default (props) => {
-    return (
-        <>
-            <style jsx>{`
+  return (
+    <>
+      <style jsx>{`
                 @media (max-width: 992px) {
                     menu {
                         display: block !important;
@@ -31,9 +31,9 @@ export default (props) => {
                     padding-bottom: 2px;
                 }
             `}</style>
-            <menu>
-                <button type="button" className="open-menu__button"></button>
-            </menu>
-        </>
-    );
+      <menu>
+        <button type="button" className="open-menu__button"></button>
+      </menu>
+    </>
+  );
 }

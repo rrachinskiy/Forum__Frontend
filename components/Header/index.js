@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 export default (props) => {
-    return (
-        <>
-            <style jsx>{`
+  return (
+    <>
+      <style jsx>{`
                 .header {
                     font-family: 'Roboto', sans-serif;
                     height: 60px;
@@ -70,11 +72,14 @@ export default (props) => {
                     height: 100%;
                 }
             `}</style>
-            <header className="header">
-                <div className="logo">
-                    <a href="/"><span>IT-Forum</span></a>
-                </div>
-                {/* <nav className="mainNavigation">
+      <header className="header">
+        <div className="logo">
+          <Link href='/'>
+            <a><span>IT-Forum</span></a>
+          </Link>
+
+        </div>
+        {/* <nav className="mainNavigation">
                     <ul className={styles.mainNavigation__content}>
                         <li className={styles.mainNavigation_li}>
                             <a href="#">Пункт меню</a>
@@ -90,7 +95,7 @@ export default (props) => {
                         </li>
                     </ul>
                 </nav> */}
-            </header>
-        </>
-    )
+      </header>
+    </>
+  )
 }

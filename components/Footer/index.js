@@ -1,7 +1,7 @@
 export default (props) => {
-    return (
-        <>
-            <style jsx>{`
+  return (
+    <>
+      <style jsx>{`
                 footer {
                     font-family: 'Roboto', sans-serif;
                     margin-top: 9px;
@@ -39,14 +39,14 @@ export default (props) => {
                     text-decoration: underline;
                 }
             `}</style>
-            <footer>
-                <div className="footer__container">
-                    <p>
-                        <span>IT-Forum</span><br />
-                        <a href="https://t.me/RRostislav" target="_blank">Powered by Rostyslav Rachynskiy</a>
-                    </p>
-                </div>
-            </footer>
-        </>
-    )
+      <footer>
+        <div className="footer__container">
+          <p>
+            <span>IT-Forum</span><br />
+            <a href="https://t.me/RRostislav" target="_blank">Powered by Rostyslav Rachynskiy</a>
+          </p>
+        </div>
+      </footer>
+    </>
+  )
 }
