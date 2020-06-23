@@ -3,7 +3,7 @@ export default ({ title }) => {
     <>
       <style jsx>{`
                 .title-block {
-                    margin-top: 9px;
+                    margin-top: 6px;
                     background-color: #EAEAEA;
                     border-radius: 5px;
                     height: 70px;

@@ -7,6 +7,7 @@ import Sectionsbox from './Sectionsbox';
 import Title from './Title';
 import Toolbar from './Toolbar';
 import MessageBox from './MessageBox';
+import MessageEditor from './MessageEditor';
 
 export {
   Breadcrumb,
@@ -17,5 +18,6 @@ export {
   Sectionsbox,
   Title,
   Toolbar,
-  MessageBox
+  MessageBox,
+  MessageEditor
 };

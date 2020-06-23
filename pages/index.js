@@ -6,8 +6,9 @@ import Title from '../components/Title';
 import fetch from 'node-fetch';
 
 export default function ({ data }) {
+
   return (
-    <MainLayout path={'router.pathname'}>
+    <>
       <Title title="Головна" />
       <style jsx>{`
               section {
@@ -64,28 +65,26 @@ export default function ({ data }) {
       <section>
         <Sectionsbox boxTitle="Розділи">
           {
-            data.sections.length > 0 ?
-              data.sections.map(section => {
-                return (
-                  <Link key={section.id} href='/section/[id]' as={`/section/${section.id}`}>
-                    <a key={section.id} className="section-link">
-                      <div className="section">
-                        <div className="section__icon">
-                          <img src="/section-icon.png" alt="Іконка для розділу" />
-                        </div>
-                        <div className="section__info">
-                          <span>{section.title}</span>
-                        </div>
+            data?.sections?.map(section => {
+              return (
+                <Link key={section.id} href='/section/[id]' as={`/section/${section.id}`}>
+                  <a key={section.id} className="section-link">
+                    <div className="section">
+                      <div className="section__icon">
+                        <img src="/section-icon.png" alt="Іконка для розділу" />
                       </div>
-                    </a>
-                  </Link>
-                );
-              }) :
-              "Розділи відсутні"
+                      <div className="section__info">
+                        <span>{section.title}</span>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              );
+            }) || "Розділи відсутні"
           }
         </Sectionsbox>
       </section>
-    </MainLayout>
+    </>
   )
 }
 

@@ -12,7 +12,6 @@ export default (props) => {
                 height: 38px;
                 overflow: hidden;
             }
-
             @media (max-width: 992px) {
                 .breadcrumb__block {
                     display: none;
@@ -25,13 +24,11 @@ export default (props) => {
                 margin-top: 10px;
                 margin-left: 15px;
             }
-
             .breadcrumb-item {
                 display: inline-block;
                 padding-left: .5rem;
                 line-height: 15px;
             }
-
             .breadcrumb-item:after {
                 display: inline-block;
                 padding-left: .5rem;
@@ -41,21 +38,17 @@ export default (props) => {
                 color: #6c757d;
                 content: "/";
             }
-
             .breadcrumb-item a {
                 color: #0056b3;
                 text-decoration: none;
                 font-size: 1.025rem;
             }
-
             .breadcrumb-item a:hover {
                 text-decoration: underline;
             }
-
             .active {
                 color: #6c757d;
             }
-
             .active:after {
                 content: '';
                 padding-left: 0;
@@ -63,7 +56,7 @@ export default (props) => {
             `}</style>
       <div className="breadcrumb__block">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item">
+          {/* <li className="breadcrumb-item">
             <Link href="/">
               <a><span>Головна</span></a>
             </Link>
@@ -73,7 +66,7 @@ export default (props) => {
           </li>
           <li className="breadcrumb-item active">
             <span>Тема</span>
-          </li>
+          </li> */}
         </ol>
       </div>
     </>

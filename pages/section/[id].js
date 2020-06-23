@@ -1,10 +1,11 @@
 import { withRouter } from 'next/router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import Title from '../../components/Title';
-import MainLayout from '../../components/MainLayout';
 import SectionsBox from '../../components/Sectionsbox';
 import fetch from 'node-fetch';
+
+import PostsContext from '../../context/postsContext';
 
 const PostList = ({ data }) => {
   // const [posts, setPosts] = useState([]);
@@ -21,8 +22,10 @@ const PostList = ({ data }) => {
   //   fetchData();
 
   // }, []);
+  const postsContext = useContext(PostsContext);
+  postsContext.currentSection = data?.section?.id;
   return (
-    <MainLayout path={'router.pathname'}>
+    <>
       <Title title={data.success ? data.section.title : "Some error occured"} />
       <style jsx>{`
         section {
@@ -75,7 +78,34 @@ const PostList = ({ data }) => {
           display: inline-block;
           margin-top: 10px;
         }
+
+        .controls-box {
+          background-color: #fafafa;
+          height: 60px;
+          margin-top: 11px;
+          border-radius: 4px;
+          border: 1px solid #e8e8e8;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+
+        .controls-box button {
+          height: 40px;
+          width: 140px;
+          margin-right: 40px;
+          background-color: #47ed95;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          outline-color: #0be068;
+        }
       `}</style>
+      <div className="controls-box">
+        <Link href="/post/add">
+          <button>Створити тему</button>
+        </Link>
+      </div>
       <SectionsBox boxTitle="Список тем">
         {
           data.success ?
@@ -97,7 +127,7 @@ const PostList = ({ data }) => {
             }) : "Записи відсутні"
         }
       </SectionsBox>
-    </MainLayout>
+    </>
   )
 }
 

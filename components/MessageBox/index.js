@@ -1,4 +1,4 @@
-export default ({ user, message }) => {
+export default ({ user, message, id }) => {
   return (
     <>
       <style jsx>{`
@@ -74,7 +74,6 @@ export default ({ user, message }) => {
         }
 
         .role-name {
-          font-style: italic;
           font-weight: bold;
           font-size: 1.1rem;
         }
@@ -83,24 +82,24 @@ export default ({ user, message }) => {
           padding: 20px;
         }
       `}</style>
-      <div className="message-box">
+      <div id={id} className="message-box">
         <div className="nickname info">
-          <span>{user.nickname}</span>
+          <span>{user?.nickname}</span>
         </div>
         <div className="date info">
-          <span>Опубліковано: {message.date}</span>
+          <span>Опубліковано: {message?.date}</span>
         </div>
         <div className="additional-info">
-          <img className="profile-image" src={user.image} />
+          <img className="profile-image" src={user?.image} />
           <div className="role">
-            <span className="role-name">{user.role}</span>
+            <span className="role-name">{user?.role}</span>
           </div>
         </div>
         <div className="message">
-          {message.text}
+          {message?.text}
         </div>
         <div className="signature">
-          {user.signature}
+          {user?.signature}
         </div>
       </div>
     </>
